@@ -1,0 +1,24 @@
+﻿@model TicariOtamasyon.Models.Sınıflar.Cari
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
+<h2>YeniCari</h2>
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.CariAd)
+    @Html.TextBoxFor(X => X.CariAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariSoyad)
+    @Html.TextBoxFor(X => X.CariSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariSehir)
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.CariMail)
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <button class="custom-btn btn-7">Kaydet</button>
+</form>
+

@@ -1,0 +1,40 @@
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+<link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
+<table class="table table-bordered" style="margin-top:20px; margin-left:20px">
+    <tr>
+        <th>ID</th>
+        <th>Personel Ad</th>
+        <th>Personel Soyad</th>
+        <th>Personel Görsel</th>
+        <th>Departman Adı</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+
+
+            <td>@k.PersonelID</td>
+            <td>@k.PersonelAd</td>
+            <td>@k.PersonelSoyad</td>
+            <td>@k.PersonelGörsel</td>
+            <td>@k.Departman.DepartmanAd</td>
+            @*<td><a href="/Departman/DepartmanSil/@k.DepartmanID" class="custom-btn btn-11" style="width:110px;height:40px;text-align:center">Sil</a></td>
+            <td><a href="/Departman/DepartmanGetir/@k.DepartmanID" class="custom-btn btn-15" style="width:110px;height:40px;text-align:center">Güncelle</a></td>*@
+            <td><a href="/Departman/DepartmaPersonelSatis/@k.DepartmanID" class=" custom-btn btn-16" style="width:110px;height:40px;text-align:center">Detaylar</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Personel/PersonelEkle" class="btn btn-danger">Ekle</a>
+

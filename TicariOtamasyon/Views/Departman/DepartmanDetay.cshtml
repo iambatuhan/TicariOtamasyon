@@ -1,0 +1,30 @@
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>DepartmanDetay</h2>
+<link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
+<div style="background-color:darkblue">
+    PersonelList
+</div>
+<table class="table table-hover">
+    <tr>
+        <th>Personel ID</th>
+        <th>Ad</th>
+        <th>SoyAd</th>
+        <th>Gorsel</th>
+        <th>Satışlar</th>
+    </tr>
+    <tr>
+        @foreach (var x in Model)
+        {
+        <td>@x.PersonelID</td>
+        <td>@x.PersonelAd</td>
+        <td>@x.PersonelSoyad</td>
+        <td>@x.PersonelGörsel</td>
+  <td><a href="/Departman/DepartmaPersonelSatis/@x.PersonelID" class="custom-btn btn-8" style="text-align:center">Satışlar</a> </td>
+        } </tr>
+</table>

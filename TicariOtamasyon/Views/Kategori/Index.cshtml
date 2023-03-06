@@ -1,0 +1,28 @@
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
+<table class="table table-bordered" style="margin-top:20px; margin-left:20px">
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+       <tr>
+
+
+            <td>@k.KategoriID</td>
+            <td>@k.KategoriAd</td>
+           <td><a href="/Kategori/KategoriSil/@k.KategoriID" class="custom-btn btn-9" style="width:110px;height:40px;text-align:center" >Sil</a></td>
+           <td><a href="/Kategori/KategoriGetir/@k.KategoriID" class="custom-btn btn-5" style="width:110px;height:40px;text-align:center" >Güncelle</a></td>
+        </tr>
+           }
+    </table>
+<a href="/Kategori/KategoriEkle" class="custom-btn btn-9" style="text-align:center">KategoriEKle</a> 
+@*<a href="/Blog/AddNewBlog/" class="custom-btn btn-8" style="text-align:center">Yeni Blog Ekle</a>*@
