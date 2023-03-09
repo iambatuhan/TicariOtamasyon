@@ -13,18 +13,21 @@ namespace TicariOtamasyon.Models.Sınıflar
         public int Faturaid { get; set; }
 
         public string FaturaSeriNo { get; set; }
-        public string FaturaSıraNo { get; set; }
+        public int FaturaSıraNo { get; set; }
         public DateTime Tarih { get; set; }
         [Column(TypeName ="Varchar")]
         [StringLength(60)]
         public string VergiDairesi { get; set; }
-        public DateTime Saat { get; set; }
+        [Column(TypeName = "Varchar")]
+        [StringLength(5)]
+        public string Saat { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string TeslimEden { get; set; }
         [Column(TypeName ="Varchar")]
         [StringLength(30)]
         public string TeslimAlan { get; set; }
+        public decimal ToplamTutar { get; set; }
         public ICollection<FaturaKalem> faturaKalems { get; set; }
         //not=burada bir faturanın birden fazla kalemi olabilir
     }

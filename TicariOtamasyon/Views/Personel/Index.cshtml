@@ -4,20 +4,24 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
+<link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
 <h2>Index</h2>
 <link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
-<table class="table table-bordered" style="margin-top:20px; margin-left:20px">
-    <tr>
-        <th>ID</th>
-        <th>Personel Ad</th>
-        <th>Personel Soyad</th>
-        <th>Personel Görsel</th>
-        <th>Departman Adı</th>
-        <th>Güncelle</th>
-        <th>Satışlar</th>
+<table id="tbl1" class="table table-bordered" style="margin-top:20px; margin-left:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Personel Ad</th>
+            <th>Personel Soyad</th>
+            <th>Personel Görsel</th>
+            <th>Maas</th>
+            <th>Baslangıc Tarihi</th>
+            <th>Departman Adı</th>
+            <th>Güncelle</th>
+            <th>Satışlar</th>
 
-    </tr>
+        </tr>
+    </thead>
     @foreach (var k in Model)
     {
 
@@ -27,14 +31,32 @@
             <td>@k.PersonelID</td>
             <td>@k.PersonelAd</td>
             <td>@k.PersonelSoyad</td>
+            <td>@k.Maas</td>
+            <td>@k.BaslangıcTarihi</td>
             <td>@k.PersonelGörsel</td>
             <td>@k.Departman.DepartmanAd</td>
-            @*<td><a href="/Departman/DepartmanSil/@k.DepartmanID" class="custom-btn btn-11" style="width:110px;height:40px;text-align:center">Sil</a></td>
-            <td><a href="/Departman/DepartmanGetir/@k.DepartmanID" class="custom-btn btn-15" style="width:110px;height:40px;text-align:center">Güncelle</a></td>*@
+            @*<td><a href="/Departman/DepartmanSil/@k.DepartmanID" class="custom-btn btn-11" style="width:110px;height:40px;text-align:center">Sil</a></td>*@
+            <td><a href="/Personel/PersonelGetir/@k.PersonelID" class="custom-btn btn-15" style="width:110px;height:40px;text-align:center">Güncelle</a></td>
             <td><a href="/Departman/DepartmaPersonelSatis/@k.DepartmanID" class=" custom-btn btn-16" style="width:110px;height:40px;text-align:center">Detaylar</a></td>
 
         </tr>
     }
 </table>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
 <a href="/Personel/PersonelEkle" class="btn btn-danger">Ekle</a>
+<a href="/Personel/PersonelListele" class="btn btn-danger">Ekle</a>
 

@@ -1,0 +1,72 @@
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<Fatura>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
+<br />
+
+<br />
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FaturaSeriNo</th>
+            <th>FaturaSıraNo</th>
+            <th>Tarih</th>
+            <th>VergiDairesi</th>
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Saat</th>
+            <th>Toplam</th>
+            <th>Detay</th>
+            <th>Güncelle</th>
+           
+
+        </tr>
+    </thead>
+    @foreach (var u in Model)
+    {
+<tr>
+
+    <td>@u.Faturaid</td>
+    <td>@u.FaturaSeriNo</td>
+    <td>@u.FaturaSıraNo</td>
+    <td>@u.Tarih</td>
+    <td>@u.VergiDairesi</td>
+    <td>@u.TeslimEden</td>
+    <td>@u.TeslimAlan</td>
+    <td>@u.Saat</td>
+    <td>@u.ToplamTutar</td>
+    
+    <td><a href="/Fatura/FaturaDetay/@u.Faturaid" class="custom-btn btn-8" style="text-align:center">SİL</a></td>
+    <td><a href="/Fatura/FaturaGetir/@u.Faturaid" class="custom-btn btn-9" style="text-align:center">Güncelle</a></td>
+</tr>
+
+
+
+    }
+</table>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+
+
+
+<a href="/Fatura/FaturaEkle" class="custom-btn btn-15">Yeni</a>
+<a href="/Fatura/" class="custom-btn btn-15">Pdf~Excel</a>
+
+

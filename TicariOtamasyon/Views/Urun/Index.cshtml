@@ -1,40 +1,70 @@
 ﻿@using TicariOtamasyon.Models.Sınıflar
-@model List<Urun> 
+@model List<Urun>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
 <br />
+
 <br />
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Urun</th>
-        <th>Marka</th>
-        <th>Stok</th>
-        <th>Alış Fiyat</th>
-        <th>Satış Fiyat</th>
-        <th>Kategori</th>
-        <th>SİL</th>
-        
-    </tr>
-    @foreach (var u in Model) { 
-    <tr>
-        <td>@u.Urunid</td>
-        <td>@u.UrunAd</td>
-        <td>@u.Marka</td>
-        <td>@u.Stok</td>
-        <td>@u.AlısFiyat</td>
-        <td>@u.SatısFiyat</td>
-        <td>@u.Kategori.KategoriAd</td>
-       <td><a href="/Urun/UrunSil/@u.Urunid" class="custom-btn btn-8" style="text-align:center" >SİL</a></td>
-       <td><a href="/Urun/UrunGetir/@u.Urunid" class="custom-btn btn-9" style="text-align:center">Güncelle</a></td>
-    </tr>
-    
-    
-    
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Urun</th>
+            <th>Marka</th>
+            <th>Stok</th>
+            <th>Alış Fiyat</th>
+            <th>Durum</th>
+            <th>Urun Görsel</th>
+            <th>Satış Fiyat</th>
+            <th>Kategori</th>
+            <th>Açıklama</th>
+            <th>SİL</th>
+            <th>Detay</th>
+
+        </tr>
+    </thead>
+    @foreach (var u in Model)
+    {
+<tr>
+    <td>@u.Urunid</td>
+    <td>@u.UrunAd</td>
+    <td>@u.Marka</td>
+    <td>@u.Stok</td>
+    <td>@u.AlısFiyat</td>
+    <td>@u.Durum</td>
+    <td>@u.UrunGorsel</td>
+    <td>@u.SatısFiyat</td>
+    <td>@u.Kategori.KategoriAd</td>
+    <td><a href="/Urun/UrunSil/@u.Urunid" class="custom-btn btn-8" style="text-align:center">SİL</a></td>
+    <td><a href="/Urun/UrunGetir/@u.Urunid" class="custom-btn btn-9" style="text-align:center">Güncelle</a></td>
+    <td><a href="/Urun/UrunDetay/@u.Urunid" class="custom-btn btn-9" style="text-align:center">Detay</a></td>
+</tr>
+
+
+
     }
 </table>
-<a href="/Urun/YeniUrun" class="btn btn-danger" >Yeni Urun Ekle</a>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+
+
+
+<a href="/Urun/YeniUrun" class="btn btn-danger">Yeni Urun Ekle</a>
+<a href="/Urun/UrunListesi" class="btn btn-danger">Pdf~Excel</a>
 

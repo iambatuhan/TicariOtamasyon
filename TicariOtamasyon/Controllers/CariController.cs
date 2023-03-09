@@ -36,9 +36,11 @@ namespace TicariOtamasyon.Controllers
             dep.durum = false;
             c.SaveChanges();
             return Redirect("Index");
-        
-        
-        
+        }
+        public ActionResult CariListele()
+        {
+            var degerler = c.Caris.ToList();
+            return View(degerler);
         }
     }
 }

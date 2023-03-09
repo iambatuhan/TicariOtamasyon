@@ -18,5 +18,6 @@ namespace TicariOtamasyon.Models.Sınıflar
         public DbSet<Personel> Personels { get; set; }
         public DbSet<SatısHareket> SatısHarekets { get; set; }
         public DbSet<Urun> Uruns { get; set; }
+ 
     }
 }

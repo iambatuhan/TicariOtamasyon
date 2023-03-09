@@ -76,5 +76,19 @@ namespace TicariOtamasyon.Controllers
         
         
         }
+        public ActionResult UrunListesi()
+        {
+            var degerler = c.Uruns.ToList();
+            return View(degerler);
+        }
+        public ActionResult UrunDetay(int id) {
+            var degerler = c.Uruns.Where(x => x.Urunid == id).ToList();
+            return View(degerler);
+        
+        }
+        public ActionResult Index1()
+        {
+            return View();
+        }
     }
 }

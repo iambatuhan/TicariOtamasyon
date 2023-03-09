@@ -1,28 +1,63 @@
-﻿
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<SatısHareket>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
-<table class="table table-bordered" style="margin-top:20px; margin-left:20px">
-    <tr>
-        <th>ID</th>
-        <th>Departman Adı</th>
+<table id="tbl1" class="table table-bordered" style="margin-top:20px; margin-left:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Urun</th>
+            <th>Cari</th>
+            <th>Personel</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
 
-    </tr>
+        </tr>
+    </thead>
     @foreach (var k in Model)
     {
 
         <tr>
 
 
-            <td>@k.DepartmanID</td>
-            <td>@k.DepartmanAd</td>
-            <td><a href="/Departman/DepartmanSil/@k.DepartmanID" class="custom-btn btn-11" style="width:110px;height:40px;text-align:center">Sil</a></td>
-            <td><a href="/Departman/DepartmanGetir/@k.DepartmanID" class="custom-btn btn-10" style="width:110px;height:40px;text-align:center">Güncelle</a></td>
-            <td><a href="/Departman/DepartmanDetay/@k.DepartmanID" class=" custom-btn btn-4" style="width:110px;height:40px;text-align:center">Detaylar</a></td>
+            <td>@k.SatisID</td>
+            <td>@k.Urun.UrunAd</td>
+            <td>@k.Cari.CariAd @k.Cari.CariSoyad</td>
+            <td>@k.Personel.PersonelAd @k.Personel.PersonelSoyad</td>
+            <td>@k.Adet</td>
+            <td>@k.Fiyat</td>
+            <td>@k.ToplamTutar</td>
+            <td>@k.Tarih</td>
+            @*<td><a href="/Departman/DepartmanSil/@k.DepartmanID" class="custom-btn btn-11" style="width:110px;height:40px;text-align:center">Sil</a></td>*@
+            <td><a href="/Satış/SatısGetir/@k.SatisID" class="custom-btn btn-15" style="width:110px;height:40px;text-align:center">Güncelle</a></td>
+            <td><a href="/Satış/SatisDetay/@k.SatisID" class="custom-btn btn-13" style="width:110px;height:40px;text-align:center">Detaylar</a></td>
+
 
         </tr>
     }
 </table>
-<a href="/Departman/DepartmanEkle" class="btn btn-danger">Ekle</a>
+<a href="/Satış/YeniSatis" class="custom-btn btn-14" style="text-align:center">Yeni Satış</a>
+<a href="/Satış/SatısListele" class="custom-btn btn-14" style="text-align:center">PDF~EXCEL</a>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+

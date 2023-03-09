@@ -14,6 +14,7 @@ namespace TicariOtamasyon.Models.Sınıflar
         public int miktar { get; set; }
         public decimal BirimFiyat { get; set; }
         public decimal Tutar { get; set; }
-        public Fatura Fatura { get; set; }
+        public int Faturaid { get; set; }
+        public virtual Fatura Fatura { get; set; }
     }
 }

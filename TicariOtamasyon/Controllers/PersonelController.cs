@@ -31,6 +31,7 @@ namespace TicariOtamasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel p)
         {
+            p.BaslangıcTarihi = DateTime.Parse(DateTime.Now.ToShortDateString());
             c.Personels.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -44,6 +45,7 @@ namespace TicariOtamasyon.Controllers
                                                Value = x.DepartmanID.ToString()
 
                                            }).ToList();
+            ViewBag.dgr1 = deger1;
             var prs = c.Personels.Find(id);
             return View("PersonelGetir", prs);
         }
@@ -54,9 +56,18 @@ namespace TicariOtamasyon.Controllers
             prsn.PersonelSoyad = p.PersonelSoyad;
             prsn.PersonelGörsel = p.PersonelGörsel;
             prsn.DepartmanID = p.DepartmanID;
+            prsn.Maas = p.Maas;
+            prsn.BaslangıcTarihi = p.BaslangıcTarihi;
             c.SaveChanges();
             return RedirectToAction("Index");
 
         }
+        public ActionResult PersonelListele()
+        {
+            var degerler = c.Personels.ToList();
+            return View(degerler);
+        }
+     
+     
     }
 }
