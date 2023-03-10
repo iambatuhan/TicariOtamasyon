@@ -23,6 +23,9 @@ namespace TicariOtamasyon.Models.Sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string CariMail { get; set;  }
+        [Column(TypeName = "Varchar")]
+        [StringLength(50)]
+        public string Password { get; set; }
 
         public bool durum { get; set; }
         public ICollection<SatısHareket> SatısHarekets { get; set; }
