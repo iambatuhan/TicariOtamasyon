@@ -1,0 +1,29 @@
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<Cari>
+<div class="card-body table-responsive p-0" style="height: 300px;">
+    <table class="table table-head-fixed text-nowrap">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Soyad</th>
+                <th>Mail</th>
+                <th>Durum</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model) {
+            <tr>
+                <td>@x.Cariid</td>
+                <td>@x.CariAd</td>
+                <td>@x.CariSoyad</td>
+                <td>@x.CariMail</td>
+                <td>@x.durum</td>
+                @*<td><span class="tag tag-success">Approved</span></td>*@
+       
+            </tr>
+
+            } </tbody>
+    </table>
+</div>

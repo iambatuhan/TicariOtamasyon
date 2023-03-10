@@ -67,7 +67,7 @@ namespace TicariOtamasyon.Controllers
             var degerler = c.Personels.ToList();
             return View(degerler);
         }
-     
+  
      
     }
 }

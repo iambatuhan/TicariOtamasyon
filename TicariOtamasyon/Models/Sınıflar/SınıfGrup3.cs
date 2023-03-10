@@ -5,9 +5,9 @@ using System.Web;
 
 namespace TicariOtamasyon.Models.Sınıflar
 {
-    public class SınıfGrup2
+    public class SınıfGrup3
     {
-        public string Departman { get; set; }
-        public int Sayi { get; set; }
+        public int sayi { get; set; }
+        public string marka { get; set; }
     }
 }

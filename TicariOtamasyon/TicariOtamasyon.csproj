@@ -139,6 +139,7 @@
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\SatışController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
+    <Compile Include="Controllers\YapılacakController.cs" />
     <Compile Include="Controllers\İstatislikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -156,7 +157,9 @@
     <Compile Include="Models\Sınıflar\SatısHareket.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup2.cs" />
+    <Compile Include="Models\Sınıflar\SınıfGrup3.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
+    <Compile Include="Models\Sınıflar\Yapılacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2157,6 +2160,7 @@
     <Content Include="fonts\StyleSheet1.css" />
     <Content Include="fonts\StyleSheet2.css" />
     <Content Include="fonts\StyleSheet3.css" />
+    <Content Include="fonts\StyleSheet4.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="pngwing.com.ico" />
@@ -2848,6 +2852,9 @@
     <Content Include="Views\İstatislik\KolayTablolar.cshtml" />
     <Content Include="Views\Urun\Index1.cshtml" />
     <Content Include="Views\İstatislik\Partial.cshtml" />
+    <Content Include="Views\İstatislik\Partial1.cshtml" />
+    <Content Include="Views\İstatislik\Partia2.cshtml" />
+    <Content Include="Views\Yapılacak\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

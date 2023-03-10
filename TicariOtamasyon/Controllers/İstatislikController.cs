@@ -61,7 +61,7 @@ namespace TicariOtamasyon.Controllers
         public PartialViewResult Partial()
         {
             var sorgu2 = from x in c.Personels
-                         group x by x.DepartmanID into g
+                         group x by x.Departman.DepartmanAd into g
                          select new SınıfGrup2
                          {
 
@@ -71,6 +71,22 @@ namespace TicariOtamasyon.Controllers
                          };
             return PartialView(sorgu2.ToList());
         }
-
+        public PartialViewResult Partial1()
+        {
+            var sorgu = c.Caris.ToList();
+            return PartialView(sorgu); 
+        }
+        public PartialViewResult Partia2()
+        {
+            var sorgu2 = from x in c.Uruns
+                         group x by x.Marka into g
+                         select new SınıfGrup3
+                         {
+                             marka = g.Key,
+                             sayi = g.Count()
+                         };
+            return PartialView(sorgu2.ToList());
+            //return PartialView(sorgu2.ToList());
+        }
     }
 }
