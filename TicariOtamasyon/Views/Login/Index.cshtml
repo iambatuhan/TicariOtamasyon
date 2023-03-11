@@ -78,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">login here »</a>
                 </div>
                 <div class="register-in">
-                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog1">Subscribe here »</a>
+                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog1">Giriş Yap »</a>
                 </div>
                 <div class="clear"> </div>
             </div>
@@ -118,23 +118,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- subscribe form popup-->
     <div class="pop-up">
         <div id="small-dialog1" class="mfp-hide book-form">
+            @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+            {
+                <div class="login-form login-form-left">
+                    <div class="agile-row">
+                        <h3>Personel</h3>
+                        <p></p>
+                        <div class="clear"></div>
+                        <div class="login-agileits-top">
 
-            <div class="login-form login-form-left">
-                <div class="agile-row">
-                    <h3>Personel</h3>
-                    <p>Sign up to get notified about latest offers, news and events. Stay tuned!</p>
-                    <div class="clear"></div>
-                    <div class="login-agileits-top">
-                        <form action="#" method="post">
-                            <input type="text" class="name" name="name" Placeholder="Mail" required="" />
-                            <input type="email" class="password" name="Password" Placeholder="Email" required="" />
-                            <input type="submit" value="Get Notified">
-                        </form>
+                            <input type="text" class="name" name="KullaniciAd" Placeholder="KullancıAd" required="" />
+                            <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
+                            <input type="submit" value="Giriş Yap">
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
+            }  </div>
     </div>
     <!-- //subscribe form popup-->
     <!-- register form popup-->

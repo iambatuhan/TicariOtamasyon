@@ -1,0 +1,56 @@
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<FaturaKalem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Acıklama</th>
+            <th>miktar</th>
+            <th>birim fiyat</th>
+            <th>tutar</th>
+            <th>fatura ıd</th>
+        
+
+        </tr>
+    </thead>
+    @foreach (var u in Model)
+    {
+        <tr>
+
+            <td>@u.FaturaKalemid</td>
+            <td>@u.Acıklama</td>
+            <td>@u.miktar</td>
+            <td>@u.BirimFiyat</td>
+            <td>@u.Tutar</td>
+            <td>@u.Faturaid</td>
+
+        </tr>
+
+
+
+    }
+</table>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+
+
+
+<a href="/Cari/YeniCari/" class="custom-btn btn-15">Yeni Kayıt</a>
+<a href="/Cari/CariListele/" class="custom-btn btn-15">Pdf~Excel</a> 

@@ -1,0 +1,83 @@
+﻿@using TicariOtamasyon.Models.Sınıflar
+@model List<SatısHareket>
+@{
+    Layout = null;
+}
+<link href="~/fatura/style.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Example 1</title>
+    <link rel="stylesheet" href="style.css" media="all" />
+</head>
+<body>
+    @foreach (var u in Model)
+    {
+        <header class="clearfix">
+            <div id="logo">
+                <img src="~/fatura/logo.png">
+            </div>
+      
+                <h1>Fatura No:@u.SatisID</h1>
+                <div id="company" class="clearfix">
+                    <div>Company Name</div>
+                    <div>455 Foggy Heights,<br /> AZ 85004, US</div>
+                    <div>(602) 519-0450</div>
+                    <div><a href="mailto:company@example.com">company@example.com</a></div>
+                </div>
+                <div id="project">
+                    <div><span>PROJECT</span> Website development</div>
+                    <div><span>CLIENT</span> @u.Cari.CariAd</div>
+                    <div><span>ADDRESS</span> @u.Cari.CariSehir</div>
+                    <div><span>EMAIL</span> <a href="mailto:@u.Cari.CariMail">@u.Cari.CariMail</a></div>
+                    <div><span>DATE</span> @u.Tarih</div>
+                    
+                </div>
+            </header>
+            <main>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="service">Urun</th>
+                            <th class="desc">Acıklama</th>
+                            <th>Adet Fiyat</th>
+                            <th>Adet</th>
+                            <th>Toplam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="service">@u.Urun.UrunAd</td>
+                            <td class="desc">@u.Urun.Acıklama</td>
+                            <td class="unit">₺@u.Fiyat</td>
+                            <td class="qty">@u.Adet</td>
+                            <td class="total">₺@u.ToplamTutar</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="4">SUBTOTAL</td>
+                            <td class="total">₺@u.ToplamTutar</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">TAX 25%</td>
+                            <td class="total">$1,300.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="grand total">GRAND TOTAL</td>
+                            <td class="grand total">₺6,500.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="notices">
+                    <div>NOTICE:</div>
+                    <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+                </div>
+            </main>
+            <footer>
+                Invoice was created on a computer and is valid without the signature and seal.
+          
+            </footer>
+    }</body>
+</html>
+

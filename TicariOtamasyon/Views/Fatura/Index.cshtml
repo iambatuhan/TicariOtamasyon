@@ -22,6 +22,7 @@
             <th>Toplam</th>
             <th>Detay</th>
             <th>Güncelle</th>
+            @*<th>Pop up</th>*@
            
 
         </tr>
@@ -42,6 +43,7 @@
     
     <td><a href="/Fatura/FaturaDetay/@u.Faturaid" class="custom-btn btn-8" style="text-align:center">SİL</a></td>
     <td><a href="/Fatura/FaturaGetir/@u.Faturaid" class="custom-btn btn-9" style="text-align:center">Güncelle</a></td>
+    @*<td><a href="#" class="custom-btn btn-5" style="text-align:center">Pop UP</a></td>*@
 </tr>
 
 
@@ -67,6 +69,32 @@
 
 
 <a href="/Fatura/FaturaEkle" class="custom-btn btn-15">Yeni</a>
-<a href="/Fatura/" class="custom-btn btn-15">Pdf~Excel</a>
-
-
+<a href="/Fatura/FaturaListele" class="custom-btn btn-15">Pdf~Excel</a>
+<button type="button" class="custom-btn btn-7" data-toggle="modal" data-target="#Modal1">PopUp</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+               <h2 class="modal-title">Popup diyalog</h2>
+           </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>SeriNo</td>
+                        <td>SıraNo</td>
+                        <td>Tutar</td>
+                    </tr>
+                    <tr>
+                        @foreach (var x in Model) {
+                        <t>@x.FaturaSeriNo</t>
+                        <td>@x.FaturaSıraNo</td>
+                        <td>@x.ToplamTutar</td>
+                        
+                        }
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</div>

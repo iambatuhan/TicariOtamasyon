@@ -27,7 +27,9 @@ namespace TicariOtamasyon.Controllers
         {
             Random rnd = new Random();
 
-            f.FaturaSıraNo = rnd.Next(1000000000, 2000000000);
+            f.FaturaSıraNo = rnd.Next(1,1000000000);
+            //p.BaslangıcTarihi = DateTime.Parse(DateTime.Now.ToShortDateString());
+            f.Saat = DateTime.Parse(DateTime.Now.ToShortTimeString());
             c.Faturas.Add(f);
             c.SaveChanges();
             return RedirectToAction("Index");

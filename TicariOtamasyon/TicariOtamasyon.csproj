@@ -134,6 +134,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
+    <Compile Include="Controllers\FaturaKalemController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
@@ -2157,6 +2158,10 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="fatura\dimension.png" />
+    <Content Include="fatura\index.html" />
+    <Content Include="fatura\logo.png" />
+    <Content Include="fatura\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\StyleSheet1.css" />
@@ -2164,6 +2169,7 @@
     <Content Include="fonts\StyleSheet3.css" />
     <Content Include="fonts\StyleSheet4.css" />
     <Content Include="fonts\StyleSheet5.css" />
+    <Content Include="fonts\StyleSheet6.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="pngwing.com.ico" />
@@ -2915,6 +2921,9 @@
     <Content Include="Views\CariPanel\Profil.cshtml" />
     <Content Include="Views\CariPanel\Siparislerim.cshtml" />
     <Content Include="Views\CariPanel\Yazdır.cshtml" />
+    <Content Include="Views\CariPanel\FaturaGörüntüle.cshtml" />
+    <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\FaturaKalem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

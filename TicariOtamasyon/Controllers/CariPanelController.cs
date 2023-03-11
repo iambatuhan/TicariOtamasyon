@@ -31,5 +31,11 @@ namespace TicariOtamasyon.Controllers
             var degerler = c.SatısHarekets.Where(x => x.Cariid == id).ToList();
             return View(degerler);
         }
+        public ActionResult FaturaGörüntüle(int id)
+        {
+            var degerler = c.SatısHarekets.Where(x => x.SatisID == id).ToList();
+            return View(degerler);
+
+        }
     }
 }
