@@ -137,6 +137,7 @@
     <Compile Include="Controllers\FaturaKalemController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
@@ -155,9 +156,13 @@
     <Compile Include="Models\Sınıflar\Fatura.cs" />
     <Compile Include="Models\Sınıflar\FaturaKalem.cs" />
     <Compile Include="Models\Sınıflar\Gider.cs" />
+    <Compile Include="Models\Sınıflar\KargoDetay.cs" />
+    <Compile Include="Models\Sınıflar\KargoTakip.cs" />
     <Compile Include="Models\Sınıflar\Kategori.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
+    <Compile Include="Models\Sınıflar\İlce.cs" />
     <Compile Include="Models\Sınıflar\SatısHareket.cs" />
+    <Compile Include="Models\Sınıflar\Sehir.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup2.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup3.cs" />
@@ -2158,12 +2163,9 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
-    <Content Include="fatura\dimension.png" />
-    <Content Include="fatura\index.html" />
-    <Content Include="fatura\logo.png" />
-    <Content Include="fatura\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\style.css" />
     <Content Include="fonts\StyleSheet1.css" />
     <Content Include="fonts\StyleSheet2.css" />
     <Content Include="fonts\StyleSheet3.css" />
@@ -2885,7 +2887,6 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Fatura\Listele.cshtml" />
     <Content Include="Views\İstatislik\KolayTablolar.cshtml" />
-    <Content Include="Views\Urun\Index1.cshtml" />
     <Content Include="Views\İstatislik\Partial.cshtml" />
     <Content Include="Views\İstatislik\Partial1.cshtml" />
     <Content Include="Views\İstatislik\Partia2.cshtml" />
@@ -2924,9 +2925,13 @@
     <Content Include="Views\CariPanel\FaturaGörüntüle.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\FaturaKalem\Index.cshtml" />
+    <Content Include="Views\Urun\SatisYap.cshtml" />
+    <Content Include="Views\Kargo\Index.cshtml" />
+    <Content Include="Views\Kargo\YeniKargo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

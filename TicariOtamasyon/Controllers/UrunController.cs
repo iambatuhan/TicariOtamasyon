@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,6 +34,17 @@ namespace TicariOtamasyon.Controllers
         [HttpPost]
         public ActionResult YeniUrun(Urun p)
         {
+            if (Request.Files.Count > 0) {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetFileName(Request.Files[0].FileName);
+                string yol = "~/Image/";
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.UrunGorsel = "/Image/" + dosyaadi + uzanti;
+            
+            
+            
+            
+            }
             c.Uruns.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -70,7 +82,7 @@ namespace TicariOtamasyon.Controllers
             urn.SatısFiyat = p.SatısFiyat;
             urn.Stok = p.Stok;
             urn.UrunAd = p.UrunAd;
-            urn.UrunGorsel = p.UrunGorsel;
+            //urn.UrunGorsel = p.UrunGorsel;
             c.SaveChanges();
             return RedirectToAction("Index");
         
@@ -86,9 +98,6 @@ namespace TicariOtamasyon.Controllers
             return View(degerler);
         
         }
-        public ActionResult Index1()
-        {
-            return View();
-        }
+   
     }
 }

@@ -15,8 +15,12 @@ namespace TicariOtamasyon.Models.Sınıflar
         public DbSet<FaturaKalem> FaturaKalems { get; set; }
         public DbSet<Gider> Giders { get; set; }
         public DbSet<Kategori> Kategoris { get; set; }
+        public DbSet<Sehir> Sehirs { get; set; }
+        public DbSet<İlce> İlces { get; set; }
         public DbSet<Personel> Personels { get; set; }
         public DbSet<SatısHareket> SatısHarekets { get; set; }
+        public DbSet<KargoDetay> KargoDetays { get; set; }
+        public DbSet<KargoTakip> KargoTakips { get; set; }
         public DbSet<Urun> Uruns { get; set; }
         public DbSet<Yapılacak> Yapılacaks { get; set; }
  

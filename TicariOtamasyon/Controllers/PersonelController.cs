@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,7 +32,18 @@ namespace TicariOtamasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel p)
         {
-            p.BaslangıcTarihi = DateTime.Parse(DateTime.Now.ToShortDateString());
+            if (Request.Files.Count > 0) {
+                string dosyadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGörsel = "/Image/" + dosyadi + uzanti;
+            
+            
+            
+            
+            }
+            p.BaslangıcTarihi = DateTime.Parse(DateTime.Now.ToLongTimeString());
             c.Personels.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -54,7 +66,7 @@ namespace TicariOtamasyon.Controllers
             var prsn = c.Personels.Find(p.PersonelID);
             prsn.PersonelAd = p.PersonelAd;
             prsn.PersonelSoyad = p.PersonelSoyad;
-            prsn.PersonelGörsel = p.PersonelGörsel;
+            //prsn.PersonelGörsel = p.PersonelGörsel;
             prsn.DepartmanID = p.DepartmanID;
             prsn.Maas = p.Maas;
             prsn.BaslangıcTarihi = p.BaslangıcTarihi;

@@ -15,6 +15,7 @@ namespace TicariOtamasyon.Models.Sınıflar
         public decimal Maas { get; set; }
 
         public ICollection<SatısHareket> SatısHarekets { get; set; }
+        public ICollection<KargoDetay> KargoDetays { get; set; }
         public int DepartmanID { get; set; }
         public virtual Departman Departman { get; set; }
     }

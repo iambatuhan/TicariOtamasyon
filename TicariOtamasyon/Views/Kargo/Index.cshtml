@@ -1,52 +1,41 @@
 ﻿@using TicariOtamasyon.Models.Sınıflar
-@model List<Urun>
+@model List<KargoDetay>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
-<br />
-
-<br />
 <table id="tbl1" class="table table-bordered" style="margin-top:20px">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Urun</th>
-            <th>Marka</th>
-            <th>Stok</th>
-            <th>Alış Fiyat</th>
-            <th>Durum</th>
-            <th>Urun Görsel</th>
-            <th>Satış Fiyat</th>
-            <th>Kategori</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-      
+            <th>#</th>
+            <th>Açıklama</th>
+            <th>TakipKodu</th>
+            <th>Personel</th>
+            <th>Alici</th>
+            <th>Tarih</th>
+         
+
 
         </tr>
     </thead>
-    @foreach (var u in Model)
-    {
-<tr>
-    <td>@u.Urunid</td>
-    <td>@u.UrunAd</td>
-    <td>@u.Marka</td>
-    <td>@u.Stok</td>
-    <td>@u.AlısFiyat</td>
-    <td>@u.Durum</td>
-    <td>@u.UrunGorsel</td>
-    <td>@u.SatısFiyat</td>
-    <td>@u.Kategori.KategoriAd</td>
-    <td><a href="/Urun/UrunSil/@u.Urunid" class="custom-btn btn-8" style="text-align:center">SİL</a></td>
-    <td><a href="/Urun/UrunGetir/@u.Urunid" class="custom-btn btn-9" style="text-align:center">Güncelle</a></td>
-    
-</tr>
+    @foreach(var x in Model) { 
+    <tr>
+    <td>@x.KargoDetayID</td>
+    <td>@x.Acıklama</td>
+    <td>@x.TakipKodu</td>
+    <td>@x.Personel</td>
+    <td>@x.Alici</td>
+    <td>@x.Tarih</td>
+   
+
+    </tr>
 
 
 
     }
 </table>
+
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -65,6 +54,8 @@
 
 
 
-<a href="/Urun/YeniUrun" class="btn btn-danger">Yeni Urun Ekle</a>
+<a href="/Kargo/YeniKargo" class="btn btn-warning">Yeni Kargo Ekle</a>
 <a href="/Urun/UrunListesi" class="btn btn-danger">Pdf~Excel</a>
+
+
 

@@ -27,12 +27,14 @@ namespace TicariOtamasyon.Controllers
         {
             Random rnd = new Random();
 
-            f.FaturaSıraNo = rnd.Next(1,1000000000);
+            f.FaturaSıraNo = rnd.Next(10000, 100000);
             //p.BaslangıcTarihi = DateTime.Parse(DateTime.Now.ToShortDateString());
-            f.Saat = DateTime.Parse(DateTime.Now.ToShortTimeString());
+
+         
+
             c.Faturas.Add(f);
             c.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Fatura");
         }
         public ActionResult FaturaGetir(int id)
         {
@@ -43,8 +45,8 @@ namespace TicariOtamasyon.Controllers
         {
             var fatura= c.Faturas.Find(f.Faturaid);
             fatura.FaturaSeriNo = f.FaturaSeriNo;
-            fatura.FaturaSıraNo = f.FaturaSıraNo;
-            fatura.Saat = f.Saat;
+            //fatura.FaturaSıraNo = f.FaturaSıraNo;
+            //fatura.Saat = f.Saat;
             fatura.Tarih = f.Tarih;
             fatura.TeslimAlan = f.TeslimAlan;
             fatura.TeslimEden = f.TeslimEden;

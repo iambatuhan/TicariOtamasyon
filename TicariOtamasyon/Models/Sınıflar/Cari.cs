@@ -29,5 +29,6 @@ namespace TicariOtamasyon.Models.Sınıflar
 
         public bool durum { get; set; }
         public ICollection<SatısHareket> SatısHarekets { get; set; }
+        public ICollection<KargoDetay> KargoDetays { get; set; }
     }
 }

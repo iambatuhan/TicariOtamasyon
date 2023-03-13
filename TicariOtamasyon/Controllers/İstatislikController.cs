@@ -35,8 +35,8 @@ namespace TicariOtamasyon.Controllers
             DateTime bugun = DateTime.Today;
             var deger11 = c.SatısHarekets.Count(x => x.Tarih == bugun).ToString();
             ViewBag.dg11 = deger11;
-            //var deger12 = c.SatısHarekets.Where(x => x.Tarih == bugun).Sum(y => y.ToplamTutar).ToString();
-            //ViewBag.d16
+            var deger14 = c.SatısHarekets.Where(x => x.Tarih == bugun).Sum(y =>(decimal?) y.ToplamTutar).ToString();
+            ViewBag.d14 = deger14;
             var deger12 = c.Uruns.GroupBy(x => x.Marka).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
             ViewBag.dg12 = deger12;
             //En çok satan ürün
