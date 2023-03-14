@@ -35,9 +35,32 @@ namespace TicariOtamasyon.Controllers
 
 
                                            }).ToList();
+            List<SelectListItem> deger3 = (from x in c.Sehirs.ToList()
+                                           select new SelectListItem
+                                           {
 
-            ViewBag.dgr1 = deger1;
-            ViewBag.dgr2 = deger2;
+                                               Text = x.SehirAd,
+                                               Value = x.PlakaID.ToString()
+
+
+                                           }).ToList();
+            List<SelectListItem> deger4 = (from x in c.İlces.ToList()
+                                           select new SelectListItem
+                                           {
+
+                                               Text = x.İlceAd,
+                                               Value = x.İlceID.ToString()
+
+
+                                           }).ToList();
+            ViewBag.dg1 = deger1;
+            ViewBag.dg2 = deger2;
+            ViewBag.dg3 = deger3;
+            ViewBag.dg4 = deger4;
+
+
+
+
            
 
 
@@ -55,5 +78,50 @@ namespace TicariOtamasyon.Controllers
             return RedirectToAction("Index");
         
         }
+        
+        public ActionResult SehirGetir() {
+
+            List<SelectListItem> deger1 = (from x in c.Sehirs.ToList()
+                                           select new SelectListItem
+                                           {
+
+                                               Text = x.SehirAd,
+                                               Value = x.PlakaID.ToString()
+
+
+                                           }).ToList();
+            List<SelectListItem> deger2 = (from x in c.İlces.ToList()
+                                           select new SelectListItem
+                                           {
+
+                                               Text = x.İlceAd,
+                                               Value = x.İlceID.ToString()
+
+
+                                           }).ToList();
+            ViewBag.dg1 = deger1;
+            ViewBag.dg2 = deger2;
+
+
+            return View ();
+
+        }
+        public JsonResult İlceGetir(int p)
+        {
+            //(from x in c.Uruns orderby x.SatısFiyat ascending select x.UrunAd).FirstOrDefault();
+            var ilceler = (from x in c.İlces
+                           join y in c.Sehirs on x.PlakaID equals y.PlakaID
+                           where x.PlakaID == p
+                           select new
+                           {
+                               Text = x.İlceAd,
+                               Value = x.İlceID.ToString()
+
+                           }
+
+                           ).ToList() ;
+            return Json(ilceler, JsonRequestBehavior.AllowGet);
+        }
+      
     }
 }

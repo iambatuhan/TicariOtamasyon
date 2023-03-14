@@ -151,6 +151,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Cari.cs" />
+    <Compile Include="Models\Sınıflar\Class5.cs" />
     <Compile Include="Models\Sınıflar\Context.cs" />
     <Compile Include="Models\Sınıflar\Departman.cs" />
     <Compile Include="Models\Sınıflar\Fatura.cs" />
@@ -159,8 +160,8 @@
     <Compile Include="Models\Sınıflar\KargoDetay.cs" />
     <Compile Include="Models\Sınıflar\KargoTakip.cs" />
     <Compile Include="Models\Sınıflar\Kategori.cs" />
+    <Compile Include="Models\Sınıflar\Mesajlar.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
-    <Compile Include="Models\Sınıflar\İlce.cs" />
     <Compile Include="Models\Sınıflar\SatısHareket.cs" />
     <Compile Include="Models\Sınıflar\Sehir.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Models\Sınıflar\SınıfGrup3.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
     <Compile Include="Models\Sınıflar\Yapılacak.cs" />
+    <Compile Include="Models\Sınıflar\İlce.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2002,10 +2004,14 @@
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="AdminLTE-3.0.4\starter.html" />
+    <Content Include="Content\bootstrap-chosen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chosen-sprite%402x.png" />
+    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\chosen.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
@@ -2177,6 +2183,8 @@
     <Content Include="pngwing.com.ico" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
@@ -2679,6 +2687,8 @@
     <Content Include="AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="AdminLTE-3.0.4\README.md" />
+    <Content Include="Content\bootstrap-chosen.scss" />
+    <Content Include="Content\bootstrap-chosen.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2928,6 +2938,10 @@
     <Content Include="Views\Urun\SatisYap.cshtml" />
     <Content Include="Views\Kargo\Index.cshtml" />
     <Content Include="Views\Kargo\YeniKargo.cshtml" />
+    <Content Include="Views\Kargo\SehirGetir.cshtml" />
+    <Content Include="Views\Mesajlar\Index.cshtml" />
+    <Content Include="Views\CariPanel\GelenMesajlar.cshtml" />
+    <Content Include="Views\CariPanel\GidenMesajlar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

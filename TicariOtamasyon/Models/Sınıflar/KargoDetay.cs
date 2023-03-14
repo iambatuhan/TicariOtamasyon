@@ -12,10 +12,13 @@ namespace TicariOtamasyon.Models.Sınıflar
         public int TakipKodu { get; set; }
         public int PersonelID { get; set; }
         public int CariID { get; set; }
-        public string Sehir { get; set; }
-        public virtual Personel Personel { get; set; } 
-        public virtual  Cari Cari{ get; set; } 
-        public string Alici { get; set; }
+        public int? PlakaID { get; set; }
+        public int İlceID { get; set; }
+        public virtual Personel Personel { get; set; }
+        public virtual  Cari Cari{ get; set; }
+        public virtual Sehir Sehir { get; set; }
+        public virtual İlce İlce { get; set; }
+        
         public DateTime Tarih { get; set; }
     }
 }

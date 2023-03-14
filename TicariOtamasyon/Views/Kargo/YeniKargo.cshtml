@@ -1,21 +1,72 @@
-﻿@model TicariOtamasyon.Models.Sınıflar.KargoDetay 
+﻿@model TicariOtamasyon.Models.Sınıflar.KargoDetay
 @{
     ViewBag.Title = "YeniKargo";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+<script src="~/Scripts/chosen.jquery.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/chosen.jquery.min.js"></script>
+<script>
+    $(function () {
+        $('#DrpSehir').change(function () {
+            var id = $('#DrpSehir').val();
+            $.ajax({
+                url: '/Kargo/İlcegetir',
+                data: { p: id },
+                type: "POST",
+                dataType: "Json",
+                success: function (data) {
+                    console.log(data);
+                    $('#Drpilce').empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $('#Drpilce').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
 
+        $('#DrpSehir').chosen();
+
+
+
+    });
+
+
+
+
+
+
+</script>
 <h2>YeniKargo</h2>
 <form class="form-group" method="post">
     @Html.LabelFor(x => x.Acıklama)
     @Html.TextBoxFor(x => x.Acıklama, new { @class = "form-control" })
     <br />
-    <br />
+
     @Html.LabelFor(x => x.Personel.PersonelID)
-    @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dg1, new { @class = "form-control" })
     <br />
+
+    @Html.LabelFor(x => x.Cari.Cariid)
+    @Html.DropDownListFor(x => x.CariID, (List<SelectListItem>)ViewBag.dg2, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Alici)
-    @Html.DropDownListFor(x => x.Alici, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+
+    @Html.Label("İller")
+    @Html.DropDownListFor(x => x.PlakaID, (List<SelectListItem>)ViewBag.dg3, new { @class = "form-control", id = "DrpSehir" })
+    <br />
+
+
+    @Html.Label("İlceler")
+    @Html.DropDownListFor(x => x.İlceID, (List<SelectListItem>)ViewBag.dg4, new { @class = "form-control", id = "Drpilce" })
+
+
+
+    <button class="btn btn-warning">Kaydet</button>
     <br />
 </form>
 

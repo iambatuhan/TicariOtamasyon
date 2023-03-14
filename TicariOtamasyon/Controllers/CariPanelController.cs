@@ -37,5 +37,22 @@ namespace TicariOtamasyon.Controllers
             return View(degerler);
 
         }
+        public ActionResult GelenMesajlar() {
+            var mail = (string)Session["CariMail"];
+            var mesajlar= c.Mesajlars.Where(x => x.Alici == mail).ToList();
+            var gelensayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+         
+            return View(mesajlar);
+        }
+        public ActionResult GidenMesajlar()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = c.Mesajlars.Where(x => x.Alici == mail).ToList();
+            var gelensayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+
+            return View(mesajlar);
+        }
     }
 }

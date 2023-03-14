@@ -1,0 +1,37 @@
+﻿@model TicariOtamasyon.Models.Sınıflar.İlce
+@{
+    ViewBag.Title = "SehirGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    $(function () {
+        $('#DrpSehir').change(function () {
+            var id = $('#DrpSehir').val();
+            $.ajax({
+                url: '/Kargo/İlcegetir',
+                data: { p: id },
+                type: "POST",
+                dataType: "Json",
+                success: function (data) {
+                    console.log(data);
+                    $('#Drpilce').empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $('#Drpilce').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<div style="margin-left:50px">
+    @Html.Label("İller")
+    @Html.DropDownListFor(x => x.PlakaID, (List<SelectListItem>)ViewBag.dg1, new { @class = "form-control", id = "DrpSehir" })
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.Label("İlceler")
+    @Html.DropDownListFor(x => x.İlceID, (List<SelectListItem>)ViewBag.dg2, new { @class = "form-control", id = "Drpilce" })
+</div>

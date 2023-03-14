@@ -27,6 +27,7 @@ namespace TicariOtamasyon.Models.Sınıflar
         [StringLength(30)]
         public string TeslimAlan { get; set; }
         public decimal ToplamTutar { get; set; }
+        public ICollection<Sehir> Sehirs { get; set; }
         public ICollection<FaturaKalem> faturaKalems { get; set; }
         //not=burada bir faturanın birden fazla kalemi olabilir
     }
