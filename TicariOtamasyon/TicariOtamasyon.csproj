@@ -142,6 +142,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\SatışController.cs" />
+    <Compile Include="Controllers\UrunCariController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Controllers\YapılacakController.cs" />
     <Compile Include="Controllers\İstatislikController.cs" />
@@ -2942,6 +2943,9 @@
     <Content Include="Views\Mesajlar\Index.cshtml" />
     <Content Include="Views\CariPanel\GelenMesajlar.cshtml" />
     <Content Include="Views\CariPanel\GidenMesajlar.cshtml" />
+    <Content Include="Views\UrunCari\Index.cshtml" />
+    <Content Include="Views\UrunCari\UrunDetay.cshtml" />
+    <Content Include="Views\CariPanel\YeniSatis.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

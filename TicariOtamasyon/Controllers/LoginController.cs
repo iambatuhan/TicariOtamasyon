@@ -7,6 +7,7 @@ using System.Web.Security;
 using TicariOtamasyon.Models.Sınıflar;
 namespace TicariOtamasyon.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
@@ -77,9 +78,16 @@ namespace TicariOtamasyon.Controllers
                 return RedirectToAction("Index", "Login");
             
             }
+
         
         
         
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index");
         }
     }
 }

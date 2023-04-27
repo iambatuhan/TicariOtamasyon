@@ -10,6 +10,7 @@ namespace TicariOtamasyon.Controllers
     {
         // GET: CariPanel
         Context c = new Context();
+        SatısHareket s = new SatısHareket();
         [Authorize]
         public ActionResult Index()
         {
@@ -19,10 +20,13 @@ namespace TicariOtamasyon.Controllers
             return View(degerler);
         }
         public ActionResult Siparislerim() {
-            var mail = (string)Session["CariMail"];
-            var id = c.Caris.Where(x => x.CariMail == mail.ToString()).Select(y => y.Cariid).FirstOrDefault();//Sistene giriş yapan mailin adresi
-            var degerler = c.SatısHarekets.Where(x => x.Cariid == id).ToList();
-            return View(degerler);
+            
+                var mail = (string)Session["CariMail"];
+                var id = c.Caris.Where(x => x.CariMail == mail.ToString()).Select(y => y.Cariid).FirstOrDefault();//Sistene giriş yapan mailin adresi
+                var degerler = c.SatısHarekets.Where(x => x.Cariid == id).ToList();
+                return View(degerler);
+           
+            
         }
         public ActionResult Yazdır()
         {
@@ -53,6 +57,15 @@ namespace TicariOtamasyon.Controllers
             ViewBag.d1 = gelensayisi;
 
             return View(mesajlar);
+        }
+        public ActionResult TeslimAlınma(int id) {
+            var dep = c.SatısHarekets.Find(id);
+            dep.TeslimAlınma = true;
+            c.SaveChanges();
+            return View("Index");
+        
+        
+        
         }
     }
 }

@@ -10,6 +10,7 @@ namespace TicariOtamasyon.Controllers
     {
         // GET: İstatislik
         Context c = new Context();
+        SatısHareket s=new SatısHareket();
         public ActionResult Index()
         {
             var deger1 = c.Caris.Count().ToString();
@@ -30,13 +31,17 @@ namespace TicariOtamasyon.Controllers
             ViewBag.dg8 = deger8;
             var deger9 = (from x in c.Uruns orderby x.SatısFiyat ascending select x.UrunAd).FirstOrDefault();
             ViewBag.dg9 = deger9;
-            var deger10 = c.SatısHarekets.Sum(x => x.ToplamTutar).ToString();
-            ViewBag.dg10 = deger10;
+
+
+            var deger10 = c.SatısHarekets.Where(x => x.TeslimAlınma == true).Sum(y => (decimal?)y.ToplamTutar).ToString();
+             ViewBag.dg10 = deger10;
+            
             DateTime bugun = DateTime.Today;
             var deger11 = c.SatısHarekets.Count(x => x.Tarih == bugun).ToString();
             ViewBag.dg11 = deger11;
-            var deger14 = c.SatısHarekets.Where(x => x.Tarih == bugun).Sum(y =>(decimal?) y.ToplamTutar).ToString();
-            ViewBag.d14 = deger14;
+
+            var deger14 = c.SatısHarekets.Where(x => x.Tarih == bugun).Sum(y => (decimal?)y.ToplamTutar).ToString();
+            ViewBag.d14 = deger14; 
             var deger12 = c.Uruns.GroupBy(x => x.Marka).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
             ViewBag.dg12 = deger12;
             //En çok satan ürün

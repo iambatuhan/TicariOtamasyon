@@ -25,7 +25,7 @@ namespace TicariOtamasyon.Models.Sınıflar
         public bool Durum { get; set; }
         public string UrunGorsel { get; set; }
      
-        public string Acıklama { get; set; }
+    
         public int KategoriID { get; set; }
         public virtual Kategori Kategori { get; set; }
         public ICollection<SatısHareket> SatısHarekets { get; set; }

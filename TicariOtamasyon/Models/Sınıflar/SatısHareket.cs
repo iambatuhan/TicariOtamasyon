@@ -20,6 +20,7 @@ namespace TicariOtamasyon.Models.Sınıflar
         public int Urunid { get; set; }
         public int Cariid { get; set; }
         public int PersonelID { get; set; }
+        public bool TeslimAlınma { get; set; }
         public virtual Urun Urun{ get; set; }
         public virtual Cari Cari { get; set; }
         public virtual Personel Personel { get; set; }

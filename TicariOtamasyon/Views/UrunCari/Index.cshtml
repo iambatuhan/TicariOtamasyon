@@ -2,7 +2,7 @@
 @model List<Urun>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
 }
 <link href="~/fonts/StyleSheet1.css" rel="stylesheet" />
 <br />
@@ -20,29 +20,26 @@
             <th>Urun Görsel</th>
             <th>Satış Fiyat</th>
             <th>Kategori</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
             <th>Urun Detay</th>
 
         </tr>
     </thead>
     @foreach (var u in Model)
     {
-<tr>
-    <td>@u.Urunid</td>
-    <td>@u.UrunAd</td>
-    <td>@u.Marka</td>
-    <td>@u.Stok</td>
-    <td>@u.AlısFiyat</td>
-    <td>@u.Durum</td>
-    <td>@u.UrunGorsel</td>
-    <td>@u.SatısFiyat</td>
-    <td>@u.Kategori.KategoriAd</td>
-    <td><a href="/Urun/UrunSil/@u.Urunid" class="custom-btn btn-8" style="text-align:center">SİL</a></td>
-    <td><a href="/Urun/UrunGetir/@u.Urunid" class="custom-btn btn-9" style="text-align:center">Güncelle</a></td>
-    <td><a href="/Urun/UrunDetay/@u.Urunid" class="custom-btn btn-9" style="text-align:center">Urun Detay</a></td>
-    
-</tr>
+        <tr>
+            <td>@u.Urunid</td>
+            <td>@u.UrunAd</td>
+            <td>@u.Marka</td>
+            <td>@u.Stok</td>
+            <td>@u.AlısFiyat</td>
+            <td>@u.Durum</td>
+            <td>@u.UrunGorsel</td>
+            <td>@u.SatısFiyat</td>
+            <td>@u.Kategori.KategoriAd</td>
+
+            <td><a href="/UrunCari/UrunDetay/@u.Urunid" class="custom-btn btn-9" style="text-align:center">Urun Detay</a></td>
+
+        </tr>
 
 
 
@@ -66,6 +63,8 @@
 
 
 
-<a href="/Urun/YeniUrun" class="btn btn-danger">Yeni Urun Ekle</a>
+
 <a href="/Urun/UrunListesi" class="btn btn-danger">Pdf~Excel</a>
+
+
 

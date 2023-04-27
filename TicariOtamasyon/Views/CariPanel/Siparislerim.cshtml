@@ -20,6 +20,9 @@
             <th>Urun</th>
             <th>Satan Kişi</th>
             <th>Fatura Oluştur</th>
+            <th>Teslim Alınma Durumu</th>
+            <th>Teslim Alındı</th>
+            
         </tr>
     </thead>
     @foreach (var u in Model)
@@ -34,11 +37,15 @@
     <td>@u.Urun.UrunAd</td>
     <td>@u.Personel.PersonelAd @u.Personel.PersonelSoyad</td>
     
+
     <td><a href="/CariPanel/FaturaGörüntüle/@u.SatisID" class="custom-btn btn-9" style="text-align:center">Detay</a></td>
+    <td>@u.TeslimAlınma</td>
+    <td><a href="/CariPanel/TeslimAlınma/@u.SatisID" class="custom-btn btn-9" style="text-align:center">Teslim Alındı</a></td>
 </tr> 
     }
 </table>
 <a href="/CariPanel/Yazdır" class="custom-btn btn-9" >Yazdır</a>
+
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
